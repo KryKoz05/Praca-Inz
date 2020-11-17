@@ -6,10 +6,25 @@ public class Node
 {
     public bool walkable;
     public Vector3 worldPos;
+    public int costA;
+    public int costB;
+    public int posX;
+    public int posY;
+    public Node p;
 
-    public Node(bool _walkable, Vector3 _worldPos)
+    public Node(bool dWalkable, Vector3 dWorldPos, int dPosX, int dPosY)
     {
-        walkable = _walkable;
-        worldPos = _worldPos;
+        walkable = dWalkable;
+        worldPos = dWorldPos;
+        posX = dPosX;
+        posY = dPosY;
+    }
+
+    public int costC
+    {
+        get
+        {
+            return costA + costB;
+        }
     }
 }
