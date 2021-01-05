@@ -4,14 +4,25 @@ using UnityEngine;
 
 public class Destroy : MonoBehaviour
 {
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.CompareTag("Player"))
-        {
-            
-            Destroy(this.gameObject);
+    
+    public Transform weakPoint;
+    public float weakPointRad = 1.5f;
+    public LayerMask isPlayer;
 
-           
+
+    private void FixedUpdate()
+    {
+        Collider2D colide = Physics2D.OverlapCircle(weakPoint.position, weakPointRad, isPlayer);
+
+
+
+        if (colide)
+        {
+            Score.currScore += 1;
+            Destroy(this.gameObject);
+            this.gameObject.GetComponent<EnemyAI>().alive = false;
         }
+
     }
 }
+

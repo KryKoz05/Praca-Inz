@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Destroy
   layers:
   - Default
   - TransparentFX
@@ -14,8 +15,8 @@ TagManager:
   - UI
   - 
   - 
+  - Background
   - Ground
-  - 
   - 
   - 
   - 
@@ -41,4 +42,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 225967255
+    locked: 0
+  - name: Ground
+    uniqueID: 3262772183
+    locked: 0
+  - name: Enemy
+    uniqueID: 2982330669
+    locked: 0
+  - name: Player
+    uniqueID: 3140560599
+    locked: 0
+  - name: UI
+    uniqueID: 2063053357
     locked: 0
