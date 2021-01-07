@@ -18,7 +18,7 @@ public class Destroy : MonoBehaviour
 
         if (colide)
         {
-            Score.currScore += 1;
+            Score.enemyScore += 1;
             Destroy(this.gameObject);
             this.gameObject.GetComponent<EnemyAI>().alive = false;
         }

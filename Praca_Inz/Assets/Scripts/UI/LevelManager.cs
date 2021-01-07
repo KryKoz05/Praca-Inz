@@ -10,4 +10,6 @@ public class LevelManager : MonoBehaviour
         
         SceneManager.LoadScene(name);
     }
+
+    
 }
