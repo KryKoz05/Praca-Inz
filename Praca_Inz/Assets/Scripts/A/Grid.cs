@@ -52,8 +52,7 @@ public class Grid : MonoBehaviour
         float percentX = (worldPosition.x / worldSize.x + 0.5f);
         float percentY = (worldPosition.y / worldSize.y + 0.5f);
 
-        percentX = (worldPosition.x + worldSize.x / 2) / worldSize.x;
-        percentY = (worldPosition.y + worldSize.y / 2) / worldSize.y;
+        
 
         int x = Mathf.RoundToInt((gridSizeX - 1) * percentX);
         int y = Mathf.RoundToInt((gridSizeY - 1) * percentY);

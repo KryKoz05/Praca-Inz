@@ -32,15 +32,7 @@ public class Node : IStack<Node>
 
    
 
-    public int NodeCompare(Node toCompare)
-    {
-        int compare = costC.CompareTo(toCompare.costC);
-        if (compare == 0)
-        {
-            compare = costB.CompareTo(toCompare.costB);
-        }
-        return -compare;
-    }
+   
     public int Index
     {
         get
