@@ -9,6 +9,7 @@ public class LevelManager : MonoBehaviour
     {
         
         SceneManager.LoadScene(name);
+        Score.enemyScore = 0;
     }
 
     
