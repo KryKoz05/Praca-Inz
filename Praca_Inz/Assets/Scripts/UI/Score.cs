@@ -11,7 +11,8 @@ public class Score : MonoBehaviour
     public static int enemyScore;
     public int winingEnemyScore;
     public Text score;
-    
+    Scene scene;
+    public string levelToLoad;
    
 
 
@@ -19,7 +20,9 @@ public class Score : MonoBehaviour
     {
         
         currScore = 0;
-        
+        PlayerPrefs.SetInt("GameScore", 0);
+
+
     }
 
     public void Update()
@@ -52,29 +55,37 @@ public class Score : MonoBehaviour
 
         if (enemyScore == winingEnemyScore)
         {
+            PlayerPrefs.SetInt("GameScore", currScore + PlayerPrefs.GetInt("GameScore", 0));
             int temp = PlayerPrefs.GetInt("Highscore", 0);
             int temp1 = PlayerPrefs.GetInt("Highscore1", 0);
             int temp2 = PlayerPrefs.GetInt("Highscore2", 0);
-            if (currScore > temp)
+            if (PlayerPrefs.GetInt("GameScore", 0) > temp)
             {
-                PlayerPrefs.SetInt("Highscore", currScore);
+                PlayerPrefs.SetInt("Highscore", PlayerPrefs.GetInt("GameScore", 0));
                 PlayerPrefs.SetInt("Highscore1", temp);
                 PlayerPrefs.SetInt("Highscore2", temp1);
 
 
             }
-            if (currScore > temp2 && currScore > temp1 && currScore < temp)
+            if (PlayerPrefs.GetInt("GameScore", 0) > temp2 && PlayerPrefs.GetInt("GameScore", 0) > temp1 && PlayerPrefs.GetInt("GameScore", 0) < temp)
             {
-                PlayerPrefs.SetInt("Highscore1", currScore);
+                PlayerPrefs.SetInt("Highscore1", PlayerPrefs.GetInt("GameScore", 0));
                 PlayerPrefs.SetInt("Highscore2", temp1);
 
             }
-            if (currScore > temp2 && currScore < temp && currScore < temp1)
+            if (PlayerPrefs.GetInt("GameScore", 0) > temp2 && PlayerPrefs.GetInt("GameScore", 0) < temp && PlayerPrefs.GetInt("GameScore", 0) < temp1)
             {
-                PlayerPrefs.SetInt("Highscore2", currScore);
+                PlayerPrefs.SetInt("Highscore2", PlayerPrefs.GetInt("GameScore", 0));
 
             }
-            SceneManager.LoadScene("WiningScene");
+            if(levelToLoad == "WiningScene")
+            {
+                PlayerPrefs.SetInt("GameScore", 0);
+            }
+            SceneManager.LoadScene(levelToLoad);
+        
+            currScore = 0;
+            enemyScore = 0;
         }
     }
 }

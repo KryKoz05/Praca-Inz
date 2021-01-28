@@ -117,7 +117,7 @@ MonoBehaviour:
   weakPointRad: 0.5
   isPlayer:
     serializedVersion: 2
-    m_Bits: 65536
+    m_Bits: 32768
 --- !u!114 &618046789484318984
 MonoBehaviour:
   m_ObjectHideFlags: 0
